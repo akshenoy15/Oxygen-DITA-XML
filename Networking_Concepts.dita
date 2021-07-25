@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_trk_zwd_wpb">
+    <title>Networking</title>
+    <shortdesc>Basic overview of networking concepts implemented in projects. </shortdesc>
+    <taskbody>
+        <context><b>What is a Network?
+                </b><lines id="lines_rt2_ns2_wpb">A network consists of two or more computers linked to share resources to exchange files or electronic signals. The computers on a network are connected using cables, telephone lines, optical fibers, etc. Routers, switches &amp; hubs enable connections to be made between one or more computers to other computers, networked devices, or even other data networks. They provide a means of creating more significant levels of connectivity within a wired data network. Some devices even offer Wi-Fi capability enabling wireless connectivity. The connection points on these Ethernet devices are called ports.
+
+<b>Port States</b>
+
+The ports on a switch with enabled Spanning Tree Protocol (STP) are in one of the following five port states.
+</lines><ul id="ul_mbz_cwh_wpb">
+                <li>Blocking </li>
+            </ul><ul id="ul_v3y_dwh_wpb">
+                <li>Listening</li>
+            </ul><ul id="ul_i3l_2wh_wpb">
+                <li>Learning</li>
+            </ul><ul id="ul_z2z_2wh_wpb">
+                <li>Forwarding</li>
+            </ul><ul id="ul_iwj_fwh_wpb">
+                <li>Disabled</li>
+            </ul><lines id="lines_aty_cwh_wpb">
+A switch does not enter any of these port states immediately. When the Spanning Tree Protocol (STP) is enabled, every switch in the network starts in the blocking state. Later changes to the listening and learning states.
+
+<b>Port Roles</b>
+
+Root Bridge is a switch with all its ports placed in forwarding state. The root bridge is often called a Root Switch. It is also called a Master Switch, for which one active path must be available from all other switches, effectively avoiding possible network loops.
+A non–root switch’s port that connects this switch to the root switch, with the shortest path, is called the root port.
+A non – root port, which is away from the root switch, and has the shortest path in that Ethernet segment, is called the designated port.
+STP uses the following criteria to decide whether to place a port in a Forwarding state or Blocking state.
+STP elects a Root Bridge and then puts all its working interfaces in a Forwarding state.
+All other switches are now non–root switches. STP now looks at all the Root Ports from these switches and finds the one with the Least Cost once this is found, STP places that interface in a Forwarding state.
+Now STP finds all the Designated ports on the non–root switches and places them in a Forwarding state.
+Then STP places all other ports in a Blocking state.
+It is essential to understand that the process of the Root Bridge and non-root switches selection along with the port selection is performed only on working interfaces. Any failed/down interface i.e. no cables connected, or an interface which has been shutdown administratively, is parked into an STP Disabled state.</lines><table
+                frame="all" rowsep="1" colsep="1" id="table_pbc_bhk_fqb">
+                <title>Port Roles </title>
+                <tgroup cols="2">
+                    <colspec colname="c1" colnum="1" colwidth="1*"/>
+                    <colspec colname="c2" colnum="2" colwidth="1*"/>
+                    <thead>
+                        <row>
+                            <entry>RSTP Port Roles</entry>
+                            <entry>Definition</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>Root Port</entry>
+                            <entry>Port on a switch that is the closest way to the Root
+                                bridge.</entry>
+                        </row>
+                        <row>
+                            <entry>Designated Port</entry>
+                            <entry>Port that can send the best BPDU on it's segment.</entry>
+                        </row>
+                        <row>
+                            <entry>Alternate Port</entry>
+                            <entry>Port that receives better BPDU from another switch. It is the
+                                backup of Root port.</entry>
+                        </row>
+                        <row>
+                            <entry>Backup Port</entry>
+                            <entry>Port that receives better BPDU from the same switch. It is the
+                                backup of Designated port.</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table><lines id="lines_i5b_bhk_fqb">
+<b>
+Contribution</b>
+</lines><p>Support for the Graphical Node Management of Infinera Networking product. GNM
+                is designed to support different functionalities of networking Chassis to a GUI
+                associated application. Port states and port role values which are readily available
+                in the Controlplane module was mapped to the GNM.  It enabled the end users identify
+                active port status. This would help them carry operations without straining for more
+                details regarding port status. This would also help them determine the active ports
+                available. The port roles were color coded  to ease the detection.    <table
+                    frame="all" rowsep="1" colsep="1" id="table_vkh_yck_fqb">
+                    <title>Port State and color code</title>
+                    <tgroup cols="4">
+                        <colspec colnum="1" colwidth="1*" colname="c1"/>
+                        <colspec colnum="2" colwidth="1*" colname="c2"/>
+                        <colspec colname="c3" colnum="3" colwidth="1*"/>
+                        <colspec colname="c4" colnum="4" colwidth="1*"/>
+                        <thead>
+                            <row>
+                                <entry>STP Port State</entry>
+                                <entry>RSTP Port State</entry>
+                                <entry>Activity status</entry>
+                                <entry>Color code</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Disabled</entry>
+                                <entry>Discarding</entry>
+                                <entry>No</entry>
+                                <entry>Red</entry>
+                            </row>
+                            <row>
+                                <entry>Blocking</entry>
+                                <entry>Discarding</entry>
+                                <entry>No</entry>
+                                <entry>Orange</entry>
+                            </row>
+                            <row>
+                                <entry>Listening</entry>
+                                <entry>Discarding</entry>
+                                <entry>Yes</entry>
+                                <entry>Amber</entry>
+                            </row>
+                            <row>
+                                <entry>Learning</entry>
+                                <entry>Learning</entry>
+                                <entry>Yes</entry>
+                                <entry>Amber</entry>
+                            </row>
+                            <row>
+                                <entry>Forwarding</entry>
+                                <entry>Forwarding</entry>
+                                <entry>Yes</entry>
+                                <entry>Green</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table></p></context>
+    </taskbody>
+</task>

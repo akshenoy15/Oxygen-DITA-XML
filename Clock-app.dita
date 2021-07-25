@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_tfd_4cx_5pb">
+    <title>How to get started with Clock </title>
+    <shortdesc>In this dynamic universe we need a clock to keep track of  our routine and schedule.
+        Here is how you can track time on your android device.</shortdesc>
+    <taskbody>
+        <prereq id="prereq_uht_xm3_vpb">Install Clock application(app) on your android device. </prereq>
+        <context>We are here to make navigation easier.<p>With Clock app options, you can set a
+                reminder for your appointment, keep track of time across the world. It helps you
+                keep an ear out for  your cake baking or turkey cooking and will keep track of your
+                workout duration. It will also help you trace your sleeping habits and follow
+                healthy routine. Here is how you can get started with Clock app.</p></context>
+        <steps>
+            <step>
+                <cmd><b>Open</b> the Clock app. </cmd>
+            </step>
+            <step>
+                <cmd>Click on the <b>Alarm</b> option to set reminder.</cmd>
+                <substeps id="substeps_pmd_b43_vpb">
+                    <substep>
+                        <cmd>Set the time . </cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Add a label. </cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Choose an alarm sound for the reminder. </cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click done to finish.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Click on  <b>World Clock</b> to check time of other countries.</cmd>
+                <substeps id="substeps_dnf_5p3_vpb">
+                    <substep>
+                        <cmd>Click on search button.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Enter the name of the country.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click on okay to see the time</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Click on <b>Timer</b>
+                </cmd>
+                <substeps id="substeps_cvz_gq3_vpb">
+                    <substep>
+                        <cmd>Enter the duration for which you want to set the timer.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click on start to begin timer.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click on add timer if you want to extend the duration and repeat steps
+                            a and b.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Click on <b>Stopwatch</b> to start tracking time.</cmd>
+                <substeps id="substeps_xhn_br3_vpb">
+                    <substep>
+                        <cmd>Click on start button to begin the stopwatch.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click on lap to begin the next lap.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click on share to send the track details through mail or SMS.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click on reset to restart the stopwatch.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Click on <b>Bedtime</b> to track sleep data.</cmd>
+                <substeps id="substeps_jbw_ms3_vpb">
+                    <substep>
+                        <cmd>Click on get started</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Set regular wake-up alarm time.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Set sleep time and silence device.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click on done to finish.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step>
+                <cmd>Click on <b>Exit</b> to close the app.</cmd>
+            </step>
+        </steps>
+    </taskbody>
+</task>
