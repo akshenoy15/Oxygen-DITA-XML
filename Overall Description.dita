@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_nwm_fcy_jqb">
+    <title>Overall Description</title>
+    <taskbody>
+        <context><p><b>2.1 System Requirement</b></p><p><image href="SE.jpg" id="image_uvh_tqy_jqb"
+                /></p><p>The Web Publishing System has four active actors and one cooperating
+                system. </p><p>The Author, Reader, or Reviewer accesses the Online Journal through
+                the Internet. Any Author or Reviewer communication with the system is through email.
+                The Editor accesses the entire system directly. There is a link to the (existing)
+                Historical Society.</p><p><b>2.2  Functional Requirement
+                Specification</b></p><p>This section outlines the use cases for each of the active
+                readers separately. The reader, the author and the reviewer have only one-use case
+                apiece while the editor is main actor in this system.</p><p><b>2.2.1 Reader Use
+                    Case</b></p><p><b>2.2.2 Author Use Case</b></p><p>In case of multiple authors,
+                this term refers to the <i>principal author</i>, with whom all communication is
+                made.</p><p><i>Use case: Submit Article</i></p><p><image href="Sub%20art.jpg"
+                    id="image_wbm_bqy_jqb"/></p><p><b>Brief Description</b></p><p>The author either
+                submits an original article or resubmits an edited article.</p><p><b>Initial
+                    Step-By-Step Description</b></p><p>Before this use case can be initiated, the
+                Author has already connected to the Online Journal Website.</p><ol
+                id="ol_jnv_dqy_jqb">
+                <li>The Author chooses the <i>Email Editor</i> button. </li>
+                <li>The System uses the <i>sendto</i> HTML tag to bring up the user’s email
+                    system.</li>
+                <li>The Author fills in the Subject line and attaches the files as directed and
+                    emails them.</li>
+                <li>The System generates and sends an email acknowledgement.</li>
+            </ol><p><b>Xref:</b> Section 3.2.2, Communicate</p><p><b>2.2.3 Reviewer Use
+                    Case</b></p><p><i>Use case: Submit Review </i></p><p>Diagram:</p><p><image
+                    href="sub%20rev.jpg" id="image_szl_mpy_jqb"/></p><p><b>Brief
+                Description</b></p><p>The reviewer submits a review of an article.</p><p><b>Initial
+                    Step-By-Step Description</b></p><p>Before this use case can be initiated, the
+                Reviewer has already connected to the Online Journal Website.</p><ol
+                id="ol_o34_npy_jqb">
+                <li> The Reviewer chooses the <i>Email Editor</i> button. </li>
+                <li>The System uses the <i>sendto</i> HTML tag to bring up the user’s email
+                    system.</li>
+                <li>The Reviewer fills in the Subject line and attaches the file as directed and
+                    emails it.</li>
+                <li>The System generates and sends an email acknowledgement.</li>
+            </ol><p><b>Xref:</b> Section 3.2.2, Communicate</p><p><b>2.2.4 Editor Use
+                Case</b></p><p>The Editor has the following sets of use cases:</p><p><image
+                    href="Editor%20Use%20case.jpg" id="image_yhc_1ky_jqb"/></p><p><b>Update
+                    Information use cases</b></p><p><i>Use Case: Update
+                Author</i></p><p>Diagram:</p><p/><image href="Update%20Author.jpg"
+                id="image_ncs_2ky_jqb"/><p><b>Brief Description</b></p><p>The Editor enters a new
+                Author or updates information about a current Author.</p><p><b>Initial Step-By-Step
+                    Description</b></p><p>Before this use case can be initiated, the Editor has
+                already accessed the main page of the Article Manager.</p><ol id="ol_klj_gky_jqb">
+                <li>The Editor selects to <i>Add</i><i>/Update</i><i> Author</i>.</li>
+                <li>The system presents a choice of adding or updating. </li>
+                <li>The Editor chooses to add or to update.</li>
+                <li>If the Editor is updating an Author, the system presents a list of authors to
+                    choose from and presents a grid filling in with the information; else the system
+                    presents a blank grid.</li>
+                <li>The Editor fills in the information and submits the form.</li>
+                <li>The system verifies the information and returns the Editor to the Article
+                    Manager main page.</li>
+            </ol><p><b>Xref:</b> Section 3.2.3, Add Author; Section 3.2.5 Update Person</p><p><i>Use
+                    case: Update Reviewer</i></p><p><image href="Update%20Reviewer.jpg"
+                    id="image_bgb_nky_jqb"/></p><p><b>Brief Description</b></p><p>The Editor enters
+                a new Reviewer or updates information about a current Reviewer.</p><p><b>Initial
+                    Step-By-Step Description</b></p><p>Before this use case can be initiated, the
+                Editor has already accessed the main page of the Article Manager.</p><ol
+                id="ol_j2k_4ky_jqb">
+                <li>The Editor selects to <i>Add</i><i>/Update</i><i> Reviewer</i>.</li>
+                <li>The system presents a choice of adding or updating. </li>
+                <li>The Editor chooses to add or to update.</li>
+                <li>The system links to the Historical Society Database.</li>
+                <li> If the Editor is updating a Reviewer, the system and presents a grid with the
+                    information about the Reviewer; else the system presents list of members for the
+                    editor to select a Reviewer and presents a grid for the person selected.</li>
+                <li>The Editor fills in the information and submits the form.</li>
+                <li>The system verifies the information and returns the Editor to the Article
+                    Manager main page.</li>
+            </ol><p><b>Xref:</b> Section 3.2.4, Add Reviewer; Section 3.2.5, Update Person</p><i>Use
+                case: Update Article </i><p>Diagram:</p><p><image href="Update%20Article.jpg"
+                    id="image_ujz_dly_jqb"/></p><p><b>Initial Step-By-Step
+                Description</b></p><p>Before this use case can be initiated, the Editor has already
+                accessed the main page of the Article Manager.</p><ol id="ol_pgl_rly_jqb">
+                <li>The Editor selects to <i>Update</i><i> Article</i>.</li>
+                <li>The system presents s list of active articles.</li>
+                <li>The system presents the information about the chosen article.</li>
+                <li>The Editor updates and submits the form.</li>
+                <li>The system verifies the information and returns the Editor to the Article
+                    Manager main page.</li>
+            </ol><p><b>Xref:</b> Section 3.2.6, Update Article Status</p><p><b>Handle Article use
+                    cases</b></p><p><i>Use case: Receive Article</i></p><p>Diagram:</p><p><image
+                    href="Receive%20Article.jpg" id="image_kqv_xly_jqb"/></p><p><b>Brief
+                    Description</b></p><p>The Editor enters a new or revised article into the
+                system.</p><p><b>Initial Step-By-Step Description</b></p><p>Before this use case can
+                be initiated, the Editor has already accessed the main page of the Article Manager
+                and has a file containing the article available.</p><ol id="ol_nmy_yly_jqb">
+                <li>The Editor selects to <i>Receive Article</i>.</li>
+                <li>The system presents a choice of entering a new article or updating an existing
+                    article. </li>
+                <li>The Editor chooses to add or to update.</li>
+                <li>If the Editor is updating an article, the system presents a list of articles to
+                    choose from and presents a grid for filling with the information; else the
+                    system presents a blank grid.</li>
+                <li>The Editor fills in the information and submits the form.</li>
+                <li>The system verifies the information and returns the Editor to the Article
+                    Manager main page.</li>
+            </ol><p><b>Xref:</b> Section 3.2.7, Enter Communication</p><p><i>Use case: Assign
+                    Reviewer </i></p><p>This use case extends the Update Article use case.</p><p>
+                Diagram:</p><p><image href="Assign%20reviewr.jpg" id="image_swq_fmy_jqb"
+                    /></p><p><b>Brief Description</b></p><p>The Editor assigns one or more reviewers
+                to an article.</p><p><b>Initial Step-By-Step Description</b></p><p>Before this use
+                case can be initiated, the Editor has already accessed the article using the
+                    <i>Update</i><i> Article</i> use case.</p><ol id="ol_nxy_hmy_jqb">
+                <li>The Editor selects to <i>Assign Reviewer</i>. </li>
+                <li>The system presents a list of Reviewers with their status (see data description
+                    is section 3.3 below).</li>
+                <li>The Editor selects a Reviewer.</li>
+                <li>The system verifies that the person is still an active member using the
+                    Historical Society Database.</li>
+                <li>The Editor repeats steps 3 and 4 until sufficient reviewers are assigned.</li>
+                <li>The system emails the Reviewers, attaching the article and requesting that they
+                    do the review.</li>
+                <li>The system returns the Editor to the <i>Update</i><i> Article</i> use case.
+                </li>
+            </ol><p><b>Xref:</b> Section 3.2.8, Assign Reviewer</p><p>
+                <i>Use case: Receive Review </i></p><p>This use case extends the Update Article use
+                case.</p><p>Diagram:</p><p><image href="Receive%20review.jpg" id="image_ejm_mmy_jqb"
+                /></p><p><b>Brief Description</b></p><p>The Editor enters a review into the system.
+                    </p><p><b>Initial Step-By-Step Description</b></p><p>Before this use case can be
+                initiated, the Editor has already accessed the article using the <i>Update</i><i>
+                    Article</i> use case.</p><ol id="ol_qkp_nmy_jqb">
+                <li>The Editor selects to <i>Receive Review</i>.</li>
+                <li>The system presents a grid for filling with the information.</li>
+                <li>The Editor fills in the information and submits the form.</li>
+                <li>The system verifies the information and returns the Editor to the Article
+                    Manager main page.</li>
+            </ol><p><b>Xref:</b> Section 3.2.7, Enter Communication</p><p><i>Use Case: Check
+                    Status:</i></p><section id="section_bt4_pmy_jqb"><p>Diagram:</p><p><image
+                        href="Check%20Status.jpg" id="image_xpx_tmy_jqb"/></p><p><b>Brief
+                        Description</b></p><p>The Editor checks the status of all active
+                    articles.</p><p><b>Initial Step-By-Step Description</b></p><p>Before this use
+                    case can be initiated, the Editor has already accessed the main page of the
+                    Article Manager. </p><ol id="ol_nlf_vmy_jqb">
+                    <li>The Editor selects to <i>Check Status</i>.</li>
+                    <li>The system returns a scrollable list of all active articles with their
+                        status (see data description in section 3.3 below).</li>
+                    <li>The system returns the Editor to the Article Manager main page.</li>
+                </ol><p><b>Xref:</b> Section 3.2.9, Check Status</p><p><b><i>Send Recommendation use
+                            cases:</i></b></p><p><i>Use case: Send Response </i></p><p>This use case
+                    extends the Update Article use case.</p><p>Diagram:</p><p><image href="send.jpg"
+                        id="image_afr_jny_jqb"/></p><p><b>Brief Description</b></p><p>The Editor
+                    sends a response to an Author. </p><p><b>Initial Step-By-Step
+                    Description</b></p><p>Before this use case can be initiated, the Editor has
+                    already accessed the article using the <i>Update</i><i> Article</i> use
+                    case.</p><ol id="ol_bdr_kny_jqb">
+                    <li>The Editor selects to <i>Send Response</i>.</li>
+                    <li>The system calls the email system and puts the Author’s email address in the
+                        Recipient line and the name of the article on the subject line.</li>
+                    <li>The Editor fills out the email text and sends the message.</li>
+                    <li>The system returns the Editor to the Article Manager main page.</li>
+                </ol><p><b>Xref:</b> Section 3.210, Send Communication</p><p><i>Use case: Send
+                        Copyright </i></p><p>This use case extends the Update Article use
+                    case.</p><p>Diagram:</p><p><image href="copyright.jpg" id="image_rps_qny_jqb"
+                    /></p><p><b>Brief Description</b></p><p>The Editor sends a copyright form to an
+                    Author. </p><p><b>Initial Step-By-Step Description</b></p><p>Before this use
+                    case can be initiated, the Editor has already accessed the article using the
+                        <i>Update</i><i> Article</i> use case.</p><ol id="ol_xdx_rny_jqb">
+                    <li>The Editor selects to <i>Send Copyright</i>.</li>
+                    <li>The system calls the email system and puts the Author’s email address in the
+                        Recipient line, the name of the article on the subject line, and attaches
+                        the copyright form.</li>
+                    <li>The Editor fills out the email text and sends the message.</li>
+                    <li>The system returns the Editor to the Article Manager main page.</li>
+                </ol><p><b>Xref:</b> Section 3.2.10, Send Communication</p><p><i>Use case: Remove
+                        Article </i></p><p>This use case extends the Update Article use
+                    case.</p><p>Diagram:</p><p><image href="remove%20article.jpg"
+                        id="image_qh1_xny_jqb"/></p><p><b>Brief Description</b></p><p>The Editor
+                    removes an article from the active category. </p><p><b>Initial Step-By-Step
+                        Description</b></p><p>Before this use case can be initiated, the Editor has
+                    already accessed the article using the <i>Update</i><i> Article</i> use
+                    case.</p><ol id="ol_msf_yny_jqb">
+                    <li>The Editor selects to remove an article from the active database.</li>
+                    <li>The system provides a list of articles with the status of each.</li>
+                    <li>The Editor selects an article for removal.</li>
+                    <li>The system removes the article from the active article database and returns
+                        the Editor to the Article Manager main page.</li>
+                </ol><p><b>Xref:</b> Section 3.2.12, Remove Article</p><p><i><b>Publish Article use
+                            case:</b></i></p><p><i>Use case: Publish Article </i></p><p>This use
+                    case extends the Update Article use case.</p><p/><image href="publish.jpg"
+                    id="image_nc4_f4y_jqb"/><p><b>Brief Description</b></p><p>The Editor transfers
+                    an accepted article to the Online Journal. </p><p><b>Initial Step-By-Step
+                        Description</b></p><p>Before this use case can be initiated, the Editor has
+                    already accessed the article using the <i>Update</i><i> Article</i> use case.
+                    </p><ol id="ol_mkg_h4y_jqb">
+                    <li>The Editor selects to <i>Publish Article</i>.</li>
+                    <li>The system transfers the article to the Online Journal and updates the
+                        search information there.</li>
+                    <li>The system removes the article from the active article database and returns
+                        the Editor to the Article Manager home page.</li>
+                </ol><p><b>Xref:</b> Section 3.2.11, Publish Article</p></section><p><b>2.3 User
+                    Characteristics</b></p><p>The Reader is expected to be Internet literate and be
+                able to use a search engine. The main screen of the Online Journal Website will have
+                the search function and a link to “Author/Reviewer Information.”</p><p>The Author
+                and Reviewer are expected to be Internet literate and to be able to use email with
+                attachments.</p><p>The Editor is expected to be Windows literate and to be able to
+                use button, pull-down menus, and similar tools.</p><p>The detailed look of these
+                pages is discussed in section 3.2 below.</p><p><b>2.4 Non-Functional
+                    Requirements</b></p><p>The Online Journal will be on a server with high speed
+                Internet capability. The physical machine to be used will be determined by the
+                Historical Society. The software developed here assumes the use of a tool such as
+                Tomcat for connection between the Web pages and the database. The speed of the
+                Reader’s connection will depend on the hardware used rather than characteristics of
+                this system. </p><p> The Article Manager will run on the editor’s PC and will
+                contain an Access database. Access is already installed on this computer and is a
+                Windows operating system. </p></context>
+    </taskbody>
+</task>

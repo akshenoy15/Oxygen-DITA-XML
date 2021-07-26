@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_tdt_1dy_jqb">
+    <title>Requirement Specification</title>
+    <taskbody>
+        <context><p><b>3.1 External Interface Requirements</b></p><p>The only link to an external
+                system is the link to the Historical Society (HS) Database to verify the membership
+                of a Reviewer. The Editor believes that a society member is much more likely to be
+                an effective reviewer and has imposed a membership requirement for a Reviewer. The
+                HS Database fields of interest to the Web Publishing Systems are member’s name,
+                membership (ID) number, and email address (an optional field for the HS
+                Database).</p><p>The Assign Reviewer use case sends the Reviewer ID to the HS
+                Database and a Boolean is returned denoting membership status. The Update Reviewer
+                use case requests a list of member names, membership numbers and (optional) email
+                addresses when adding a new Reviewer. It returns a Boolean for membership status
+                when updating a Reviewer.</p><p><b>3.2 Functional Requirements</b></p><p>The Logical
+                Structure of the Data is contained in Section 3.3.1.</p><p><b>3.2.1 Search
+                    Article</b><table frame="all" rowsep="1" colsep="1" id="table_tm4_hgy_jqb">
+                    <tgroup cols="2">
+                        <colspec colname="c1" colnum="1" colwidth="1*"/>
+                        <colspec colname="c2" colnum="2" colwidth="1*"/>
+                        <thead>
+                            <row>
+                                <entry>Use Case Name</entry>
+                                <entry>Search Article</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.1, Search Article</p>
+                                    <p>SDD, Section 7.1</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Reader assesses the Online Journal Website</entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Web is displayed with grids for searching</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_r2r_p2y_jqb">
+                                        <li>The Reader chooses how to search the Web site. The
+                                            choices are by Author, by Category, and by Keyword.</li>
+                                        <li>If the search is by Author, the system creates and
+                                            presents an alphabetical list of all authors in the
+                                            database. In the case of an article with multiple
+                                            authors, each is contained in the list.</li>
+                                        <li>The Reader selects an author.</li>
+                                        <li> The system creates and presents a list of all articles
+                                            by that author in the database.</li>
+                                        <li>The Reader selects an article.</li>
+                                        <li>The system displays the Abstract for the article.</li>
+                                        <li>The Reader selects to download the article or to return
+                                            to the article list or to the previous list.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>
+                                    <p>In step 2, if the Reader selects to search by category, the
+                                        system creates and presents a list of all categories in the
+                                        database.</p>
+                                    <ol id="ol_s2r_p2y_jqb">
+                                        <li>The Reader selects a category.</li>
+                                        <li>The system creates and presents a list of all articles
+                                            in that category in the database. Return to step 5.</li>
+                                    </ol>
+                                    <p>In step 2, if the Reader selects to search by keyword, the
+                                        system presents a dialog box to enter the keyword or
+                                        phrase.</p>
+                                    <ol id="ol_t2r_p2y_jqb">
+                                        <li>The Reader enters a keyword or phrase.</li>
+                                        <li>The system searches the Abstracts for all articles with
+                                            that keyword or phrase and creates and presents a list
+                                            of all such articles in the database. Return to step
+                                            5.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The selected article is downloaded to the client machine.
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The Reader may abandon the search at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>The categories list is generated from the information
+                                    provided when article are published and not predefined in the
+                                    Online Journal database.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table></p><p><b>3.2.2 Communicate</b></p><p>
+                <table id="table_ptg_yhy_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Communicate</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.2, Submit Article; Section 2.2.3, Submit
+                                        Review</p>
+                                    <p>SDD, Section 7.2</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The user selects a <i>mailto</i> link.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The user is on the <i>Communicate</i> page linked from the
+                                    Online Journal Main Page. </entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>This use case uses the <i>mailto</i> HTML tag. This invokes
+                                    the client email facility.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>If the user prefers to use his or her own email directly,
+                                    sufficient information will be contained on the Web page to do
+                                    so. </entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The message is sent.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The attempt may be abandoned at any time. </entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>None</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.3 Add Author</b></p><p>
+                <table id="table_msf_13y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Add Author</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.4, Update Author</p>
+                                    <p>SDD, Section 7.3</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Editor selects to add a new author to the database.
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main
+                                    screen.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_nsf_13y_jqb">
+                                        <li>The system presents a blank grid to enter the author
+                                            information.</li>
+                                        <li>The Editor enters the information and submits the
+                                            form.</li>
+                                        <li>The system checks that the name and email address fields
+                                            are not blank and updates the database.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>If in step 2, either field is blank, the Editor is instructed
+                                    to add an entry. No validation for correctness is made.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The Author has been added to the database. </entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The Editor may abandon the operation at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>The author information includes the name mailing address and
+                                    email address. </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.4 Add Reviewer</b></p><p>
+                <table id="table_r14_b3y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Add Reviewer</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.4, Update Reviewer</p>
+                                    <p>SDD, Section 7.4</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Editor selects to add a new reviewer to the
+                                    database.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main
+                                    screen.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_s14_b3y_jqb">
+                                        <li>The system accesses the Historical Society (HS) database
+                                            and presents an alphabetical list of the society
+                                            members.</li>
+                                        <li>The Editor selects a person.</li>
+                                        <li>The system transfers the member information from the HS
+                                            database to the Article Manager (AM) database. If there
+                                            is no email address in the HS database, the editor is
+                                            prompted for an entry in that field. </li>
+                                        <li>The information is entered into the AM database.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>In step 3, if there is no entry for the email address in the
+                                    HS database or on this grid, the Editor will be reprompted for
+                                    an entry. No validation for correctness is made.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The Reviewer has been added to the database.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The Editor may abandon the operation at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>The Reviewer information includes name, membership number,
+                                    mailing address, categories of interest, and email
+                                    address.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.5 Update Person</b></p><p>
+                <table id="table_xdt_c3y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Update Person</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Sec 2.2.4 Update Author; Sec 2.2.4 Update Reviewer</p>
+                                    <p>SDD, Section 7.5</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Editor selects to update an author or reviewer and the
+                                    person is already in the database. </entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main
+                                    screen.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_ydt_c3y_jqb">
+                                        <li>The Editor selects Author or Reviewer.</li>
+                                        <li>The system creates and presents an alphabetical list of
+                                            people in the category.</li>
+                                        <li>The Editor selects a person to update.</li>
+                                        <li>The system presents the database information in grid
+                                            form for modification.</li>
+                                        <li>The Editor updates the information and submits the
+                                            form.</li>
+                                        <li>The system checks that required fields are not
+                                            blank.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>In step 5, if any required field is blank, the Editor is
+                                    instructed to add an entry. No validation for correctness is
+                                    made.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The database has been updated.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>If the person is not already in the database, the use case is
+                                    abandoned. In addition, the Editor may abandon the operation at
+                                    any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>This use case is not used when one of the other use cases is
+                                    more appropriate, such as to add an article or a reviewer for an
+                                    article.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.6 Update Article Status</b></p><p>
+                <table id="table_apy_d3y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Update Article Status</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.4, Update Article</p>
+                                    <p>SDD, Section 7.6</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Editor selects to update the status of an article in the
+                                    database.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main screen and
+                                    the article is already in the database.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_bpy_d3y_jqb">
+                                        <li>The system creates and presents an alphabetical list of
+                                            all active articles.</li>
+                                        <li>The Editor selects the article to update.</li>
+                                        <li>The system presents the information about the article in
+                                            grid format. </li>
+                                        <li>The Editor updates the information and resubmits the
+                                            form.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>In step 4, the use case <i>Enter Communication</i> may be
+                                    invoked.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The database has been updated.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>If the article is not already in the database, the use case
+                                    is abandoned. In addition, the Editor may abandon the operation
+                                    at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>This use case can be used to add categories for an article,
+                                    to correct typographical errors, or to remove a reviewer who has
+                                    missed a deadline for returning a review. It may also be used to
+                                    allow access to the named use case to enter an updated article
+                                    or a review for an article. </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.7 Enter Communication</b></p><p>
+                <table id="table_lg2_f3y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Enter Communication</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.4, Receive Article; Section 2.2.4, Receive
+                                        Review</p>
+                                    <p>SDD, Section 7.7</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Editor selects to add a document to the system.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main screen and
+                                    has the file of the item to be entered available.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_mg2_f3y_jqb">
+                                        <li>The Editor selects the article using the <i>3.2.6,
+                                                Update</i><i> Article Status</i> use case.</li>
+                                        <li>The Editor attaches the file to the grid presented and
+                                            updates the respective information about the
+                                            article.</li>
+                                        <li>When the Editor updates the article status to indicate
+                                            that a review is returned, the respective entry in the
+                                            Reviewer table is updated.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>None</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The article entry is updated in the database.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The Editor may abandon the operation at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>This use case extends <i>3.2.6, Update</i><i> Article</i><i>
+                                        Status</i></entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.8 Assign Reviewer</b></p><p>
+                <table id="table_dm2_g3y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Assign Reviewer</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.4, Assign Reviewer</p>
+                                    <p>SDD, Section 7.8</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Editor selects to assign a reviewer to an article.
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main screen and
+                                    the article is already in the database. .</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_em2_g3y_jqb">
+                                        <li>The Editor selects the article using the <i>3.2.6,
+                                                Update</i><i> Article Status</i> use case.</li>
+                                        <li>The system presents an alphabetical list of reviewers
+                                            with their information. </li>
+                                        <li>The Editor selects a reviewer for the article. </li>
+                                        <li>The system updates the article database entry and emails
+                                            the reviewer with the standard message and attaches the
+                                            text of the article without author information.</li>
+                                        <li>The Editor has the option of repeating this use case
+                                            from step 2.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>None.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>At least one reviewer has been added to the article
+                                    information and the appropriate communication has been
+                                    sent.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The Editor may abandon the operation at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>This use case extends <i>3.2.6, Update</i><i> Article</i><i>
+                                        Status.</i> The Editor, prior to implementation of this use
+                                    case, will provide the message text.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.9 Check Status</b></p><p>
+                <table id="table_nh2_h3y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Check Status</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.4, Check Status</p>
+                                    <p>SDD, Section 7.9</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Editor has selected to check status of all active
+                                    articles.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main
+                                    screen.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_oh2_h3y_jqb">
+                                        <li>The system creates and presents a list of all active
+                                            articles organized by their status. </li>
+                                        <li>The Editor may request to see the full information about
+                                            an article.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>None.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The requested information has been displayed.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The Editor may abandon the operation at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>
+                                    <p>The editor may provide an enhanced list of status later. At
+                                        present, the following categories must be provided:</p>
+                                    <ol id="ol_ph2_h3y_jqb">
+                                        <li>Received but no further action taken</li>
+                                        <li>Reviewers have been assigned but not all reviews are
+                                            returned (include dates that reviewers were assigned and
+                                            order by this criterion).</li>
+                                        <li>Reviews returned but no further action taken.</li>
+                                        <li>Recommendations for revision sent to Author but no
+                                            response as of yet.</li>
+                                        <li>Author has revised article but no action has been
+                                            taken.</li>
+                                        <li>Article has been accepted and copyright form has been
+                                            sent.</li>
+                                        <li>Copyright form has been returned but article is not yet
+                                            published.</li>
+                                    </ol>
+                                    <p>A published article is automatically removed from the active
+                                        article list.</p>
+                                </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.10 Send Communication</b></p><p>
+                <table id="table_xjs_33y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Send Communication</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.4, Send Response; Section 2.2.4, Send
+                                        Copyright</p>
+                                    <p>SDD, Section 7.10</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The editor selects to send a communication to an
+                                    author.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main
+                                    screen.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_yjs_33y_jqb">
+                                        <li>The system presents an alphabetical list of
+                                            authors.</li>
+                                        <li>The Editor selects an author.</li>
+                                        <li>The system invokes the Editor’s email system entering
+                                            the author’s email address into the <i>To:</i> entry. </li>
+                                        <li>The Editor uses the email facility.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>None.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The communication has been sent.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The Editor may abandon the operation at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>The standard copyright form will be available in the Editor’s
+                                    directory for attaching to the email message, if
+                                    desired.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.11 Publish article</b></p><p>
+                <table id="table_c35_j3y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Publish Article</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.4, Publish Article</p>
+                                    <p>SDD, Section 7.11</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Editor selects to transfer an approved article to the
+                                    Online Journal.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main
+                                    screen.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_d35_j3y_jqb">
+                                        <li>The system creates and presents an alphabetical list of
+                                            the active articles that are flagged as having their
+                                            copyright form returned.</li>
+                                        <li>The Editor selects an article to publish. </li>
+                                        <li>The system accesses the Online Database and transfers
+                                            the article and its accompanying information to the
+                                            Online Journal database.</li>
+                                        <li>The article is removed from the active article
+                                            database.</li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>None.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The article is properly transferred. </entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The Editor may abandon the operation at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>Find out from the Editor to see if the article information
+                                    should be archived somewhere.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.2.12 Remove article</b></p><p>
+                <table id="table_zz3_l3y_jqb">
+                    <tgroup cols="2">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Use Case Name</b></entry>
+                                <entry>Remove Article</entry>
+                            </row>
+                            <row>
+                                <entry><b>XRef</b></entry>
+                                <entry>
+                                    <p>Section 2.2.4, Remove Article</p>
+                                    <p>SDD, Section 7.12</p>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Trigger</b></entry>
+                                <entry>The Editor selects to remove an article from the active
+                                    article database. </entry>
+                            </row>
+                            <row>
+                                <entry><b>Precondition</b></entry>
+                                <entry>The Editor has accessed the Article Manager main
+                                    screen.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Basic Path</b></entry>
+                                <entry>
+                                    <ol id="ol_a1j_l3y_jqb">
+                                        <li>The system provides an alphabetized list of all active
+                                            articles.</li>
+                                        <li>The editor selects an article.</li>
+                                        <li>The system displays the information about the article
+                                            and requires that the Editor confirm the deletion.</li>
+                                        <li>The Editor confirms the deletion. </li>
+                                    </ol>
+                                </entry>
+                            </row>
+                            <row>
+                                <entry><b>Alternative Paths</b></entry>
+                                <entry>None.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Postcondition</b></entry>
+                                <entry>The article is removed from the database.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Exception Paths</b></entry>
+                                <entry>The Editor may abandon the operation at any time.</entry>
+                            </row>
+                            <row>
+                                <entry><b>Other</b></entry>
+                                <entry>Find out from the Editor to see if the article and its
+                                    information information should be archived somewhere.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.3 Detailed Non-Functional Requirements</b></p><p><b>3.3.1 Logical Structure
+                    of the Data</b></p><p>The logical structure of the data to be stored in the
+                internal Article Manager database is given below. </p><p><image
+                    href="Logical%20Structure.jpg" id="image_vct_43y_jqb"/></p><p>The data
+                descriptions of each of these data entities is as follows:</p><b>Author Data
+                Entity</b><p>
+                <table id="table_bss_s3y_jqb">
+                    <tgroup cols="4">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <colspec colnum="3" colname="col3"/>
+                        <colspec colnum="4" colname="col4"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Data Item</b></entry>
+                                <entry><b>Type</b></entry>
+                                <entry><b>Description</b></entry>
+                                <entry><b>Comment</b></entry>
+                            </row>
+                            <row>
+                                <entry>Name</entry>
+                                <entry>Text</entry>
+                                <entry>Name of principle author</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Email Address</entry>
+                                <entry>Text</entry>
+                                <entry>Internet address</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Article</entry>
+                                <entry>Pointer</entry>
+                                <entry>Article entity</entry>
+                                <entry>May be several</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>Reviewer Data Entity</b></p><p>
+                <table id="table_uhj_bjy_jqb">
+                    <tgroup cols="4">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <colspec colnum="3" colname="col3"/>
+                        <colspec colnum="4" colname="col4"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Data Item</b></entry>
+                                <entry><b>Type</b></entry>
+                                <entry><b>Description</b></entry>
+                                <entry><b>Comment</b></entry>
+                            </row>
+                            <row>
+                                <entry>Name</entry>
+                                <entry>Text</entry>
+                                <entry>Name of principle author</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>ID</entry>
+                                <entry>Integer</entry>
+                                <entry>ID number of Historical Society member</entry>
+                                <entry>Used as key in Historical Society Database</entry>
+                            </row>
+                            <row>
+                                <entry>Email Address</entry>
+                                <entry>Text</entry>
+                                <entry>Internet address</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Article</entry>
+                                <entry>Pointer</entry>
+                                <entry>Article entity of </entry>
+                                <entry>May be several</entry>
+                            </row>
+                            <row>
+                                <entry>Num Review</entry>
+                                <entry>Integer</entry>
+                                <entry>Review entity</entry>
+                                <entry>Number of not returned reviews</entry>
+                            </row>
+                            <row>
+                                <entry>History</entry>
+                                <entry>Text</entry>
+                                <entry>Comments on past performance</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Specialty</entry>
+                                <entry>Category</entry>
+                                <entry>Area of expertise</entry>
+                                <entry>May be several</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><b>Review Data Entity</b><b>
+                <table id="table_th2_djy_jqb">
+                    <tgroup cols="4">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <colspec colnum="3" colname="col3"/>
+                        <colspec colnum="4" colname="col4"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Data Item</b></entry>
+                                <entry><b>Type</b></entry>
+                                <entry><b>Description</b></entry>
+                                <entry><b>Comment</b></entry>
+                            </row>
+                            <row>
+                                <entry>Article</entry>
+                                <entry>Pointer</entry>
+                                <entry>Article entity</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Reviewer</entry>
+                                <entry>Pointer</entry>
+                                <entry>Reviewer entity</entry>
+                                <entry>Single reviewer</entry>
+                            </row>
+                            <row>
+                                <entry>Date Sent</entry>
+                                <entry>Date</entry>
+                                <entry>Date sent to reviewer</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Returned</entry>
+                                <entry>Date</entry>
+                                <entry>Date returned; null if not returned</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Contents</entry>
+                                <entry>Text</entry>
+                                <entry>Text of review</entry>
+                                <entry> </entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </b><b>Article Data Entity</b><p>
+                <table id="table_aty_gjy_jqb">
+                    <tgroup cols="4">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <colspec colnum="3" colname="col3"/>
+                        <colspec colnum="4" colname="col4"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Data Item</b></entry>
+                                <entry><b>Type</b></entry>
+                                <entry><b>Description</b></entry>
+                                <entry><b>Comment</b></entry>
+                            </row>
+                            <row>
+                                <entry>Name</entry>
+                                <entry>Text</entry>
+                                <entry>Name of Article</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Author</entry>
+                                <entry>Pointer</entry>
+                                <entry>Author entity</entry>
+                                <entry>Name of principle author</entry>
+                            </row>
+                            <row>
+                                <entry>Other Authors</entry>
+                                <entry>Text</entry>
+                                <entry>Other authors is any; else null</entry>
+                                <entry>Not a pointer to an Author entity</entry>
+                            </row>
+                            <row>
+                                <entry>Reviewer</entry>
+                                <entry>Pointer</entry>
+                                <entry>Reviewer entity</entry>
+                                <entry>Will be several</entry>
+                            </row>
+                            <row>
+                                <entry>Review</entry>
+                                <entry>Pointer</entry>
+                                <entry>Review entity</entry>
+                                <entry>Set up when reviewer is set up</entry>
+                            </row>
+                            <row>
+                                <entry>Contents</entry>
+                                <entry>Text</entry>
+                                <entry>Body of article</entry>
+                                <entry>Contains Abstract as first paragraph.</entry>
+                            </row>
+                            <row>
+                                <entry>Category</entry>
+                                <entry>Text</entry>
+                                <entry>Area of content</entry>
+                                <entry>May be several</entry>
+                            </row>
+                            <row>
+                                <entry>Accepted</entry>
+                                <entry>Boolean</entry>
+                                <entry>Article has been accepted for publication</entry>
+                                <entry>Needs Copyright form returned</entry>
+                            </row>
+                            <row>
+                                <entry>Copyright</entry>
+                                <entry>Boolean</entry>
+                                <entry>Copyright form has been returned</entry>
+                                <entry>Not relevant unless Accepted is True.</entry>
+                            </row>
+                            <row>
+                                <entry>Published</entry>
+                                <entry>Boolean</entry>
+                                <entry>Sent to Online Journal</entry>
+                                <entry>Not relevant unless Accepted is True. Article is no longer
+                                    active and does not appear in status checks.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p>The Logical Structure of the data to be stored in the Online Journal database on
+                the server is as follows:</p><p><b>Published Article Entity</b></p><p>
+                <table id="table_lg1_kjy_jqb">
+                    <tgroup cols="4">
+                        <colspec colnum="1" colname="col1"/>
+                        <colspec colnum="2" colname="col2"/>
+                        <colspec colnum="3" colname="col3"/>
+                        <colspec colnum="4" colname="col4"/>
+                        <tbody>
+                            <row>
+                                <entry><b>Data Item</b></entry>
+                                <entry><b>Type</b></entry>
+                                <entry><b>Description</b></entry>
+                                <entry><b>Comment</b></entry>
+                            </row>
+                            <row>
+                                <entry>Name</entry>
+                                <entry>Text</entry>
+                                <entry>Name of Article</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Author</entry>
+                                <entry>Text</entry>
+                                <entry>Name of one Author </entry>
+                                <entry>May be several</entry>
+                            </row>
+                            <row>
+                                <entry>Abstract</entry>
+                                <entry>Text</entry>
+                                <entry>Abstract of article</entry>
+                                <entry>Used for keyword search</entry>
+                            </row>
+                            <row>
+                                <entry>Content</entry>
+                                <entry>Text</entry>
+                                <entry>Body of article</entry>
+                                <entry> </entry>
+                            </row>
+                            <row>
+                                <entry>Category</entry>
+                                <entry>Text</entry>
+                                <entry>Area of content</entry>
+                                <entry>May be several</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>3.3.2 Security</b></p><p>The server on which the Online Journal resides will
+                have its own security to prevent unauthorized <i>write</i>/<i>delete</i> access.
+                There is no restriction on <i>read</i> access. The use of email by an Author or
+                Reviewer is on the client systems and thus is external to the system. </p><p>The PC
+                on which the Article Manager resides will have its own security. Only the Editor
+                will have physical access to the machine and the program on it. There is no special
+                protection built into this system other than to provide the editor with write access
+                to the Online Journal to publish an article. </p></context>
+    </taskbody>
+</task>

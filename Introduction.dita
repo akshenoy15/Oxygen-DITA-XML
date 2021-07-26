@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="task_oc1_ltx_jqb">
+    <title>Introduction</title>
+    <taskbody>
+        <context><p/><b>1.1 Purpose</b><p> The purpose of this document is to present a detailed
+                description of the Web Publishing System. It will explain the purpose and features
+                of the system, the interfaces of the system, what the system will do, the
+                constraints under which it must operate and how the system will react to external
+                stimuli. This document is intended for both the stakeholders and the developers of
+                the system and will be proposed to the Regional Historical Society for its
+                approval.</p><p><b>1.2 Scope of Project</b></p>This software system will be a Web
+            Publishing System for a local editor of a regional historical society. This system will
+            be designed to maximize the editor’s productivity by providing tools to assist in
+            automating the article review and publishing process, which would otherwise have to be
+            performed manually. By maximizing the editor’s work efficiency and production the system
+            will meet the editor’s needs while remaining easy to understand and use.<p>More
+                specifically, this system is designed to allow an editor to manage and communicate
+                with a group of reviewers and authors to publish articles to a public website. The
+                software will facilitate communication between authors, reviewers, and the editor
+                via E-Mail. Preformatted reply to forms are used in every stage of the articles’
+                progress through the system to provide a uniform review process; the location of
+                these forms is configurable via the application’s maintenance options. The system
+                also contains a relational database containing a list of Authors, Reviewers, and
+                Articles.</p><p><b>1.3 Glossary</b></p><p>
+                <table frame="all" rowsep="1" colsep="1" id="table_d1n_jvx_jqb">
+                    <tgroup cols="2">
+                        <colspec colname="c1" colnum="1" colwidth="1*"/>
+                        <colspec colname="c2" colnum="2" colwidth="1*"/>
+                        <thead>
+                            <row>
+                                <entry><b>Term</b></entry>
+                                <entry><b>Definition</b></entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Active Article</entry>
+                                <entry>The document that is tracked by the system; it is a narrative
+                                    that is planned to be posted to the public website.</entry>
+                            </row>
+                            <row>
+                                <entry>Author</entry>
+                                <entry>Person submitting an article to be reviewed. In case of
+                                    multiple authors, this term refers to the <i>principal
+                                        author</i>, with whom all communication is made.</entry>
+                            </row>
+                            <row>
+                                <entry>Database</entry>
+                                <entry>Collection of all the information monitored by this
+                                    system.</entry>
+                            </row>
+                            <row>
+                                <entry>Editor</entry>
+                                <entry>Person who receives articles, sends articles for review, and
+                                    makes final judgments for publications.</entry>
+                            </row>
+                            <row>
+                                <entry>Field</entry>
+                                <entry>A cell within a form.</entry>
+                            </row>
+                            <row>
+                                <entry>Historical Society Database</entry>
+                                <entry>The existing membership database (also HS database).</entry>
+                            </row>
+                            <row>
+                                <entry>Member</entry>
+                                <entry>A member of the Historical Society listed in the HS
+                                    database.</entry>
+                            </row>
+                            <row>
+                                <entry>Reader</entry>
+                                <entry>Anyone visiting the site to read articles.</entry>
+                            </row>
+                            <row>
+                                <entry>Review</entry>
+                                <entry>A written recommendation about the appropriateness of an
+                                    article for publication; may include suggestions for
+                                    improvement.</entry>
+                            </row>
+                            <row>
+                                <entry>Reviewer</entry>
+                                <entry>A person that examines an article and has the ability to
+                                    recommend approval of the article for publication or to request
+                                    that changes be made in the article.</entry>
+                            </row>
+                            <row>
+                                <entry>Software Requirements Specification</entry>
+                                <entry>A document that completely describes all of the functions of
+                                    a proposed system and the constraints under which it must
+                                    operate. For example, this document.</entry>
+                            </row>
+                            <row>
+                                <entry>Stakeholder</entry>
+                                <entry>Any person with an interest in the project who is not a
+                                    developer.</entry>
+                            </row>
+                            <row>
+                                <entry>User</entry>
+                                <entry>Reviewer or Author.</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </p><p><b>1.4 Reference </b></p><p>IEEE. <i>IEEE Std 830-1998 IEEE Recommended Practice
+                    for Software Requirements </i></p><p><b>1.5 Overview of Document</b></p>The next
+            chapter, the Overall Description section, of this document gives an overview of the
+            functionality of the product. It describes the informal requirements and is used to
+            establish a context for the technical requirements specification in the next
+                chapter.<p>The third chapter, Requirements Specification section, of this document
+                is written primarily for the developers and describes in technical terms the details
+                of the functionality of the product. </p><p>Both sections of the document describe
+                the same software product in its entirety but are intended for different audiences
+                and thus use different language.</p></context>
+    </taskbody>
+</task>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="promiscuous_mode">
+    <title>Promiscuous mode</title>
+    <shortdesc>Describing promiscuous mode </shortdesc>
+    <taskbody>
+        <context>
+            <p dir="ltr">In a network, the <i>promiscuous mode</i> allows a network device to
+                intercept and read each network packet that arrives in its entirety. </p>
+            <p dir="ltr">In an <xref
+                    href="http://searchnetworking.techtarget.com/definition/Ethernet" format="html"
+                    scope="external">Ethernet</xref> local area network ( <xref
+                    href="http://searchnetworking.techtarget.com/definition/local-area-network-LAN"
+                    format="html" scope="external">LAN</xref>), promiscuous mode is a mode of
+                operation in which every data packet transmitted can be received and read by a
+                network adapter.</p>
+            <p>The promiscuous mode must be supported by each network adapter and the input/output
+                driver in the host operating system. Promiscuous mode is often used to monitor
+                network activity. When a network interface is placed into promiscuous mode, all
+                packets are sent to the kernel for processing, including packets not destined for
+                the MAC address of the <xref
+                    href="https://www.sciencedirect.com/topics/computer-science/network-interface-card"
+                    format="html" scope="external"><u>network interface card</u></xref>. The one
+                main reason that this is a bad thing is that users on the system with a promiscuous
+                mode network interface can now use a tool like a sniffer to view any <xref
+                    href="https://www.sciencedirect.com/topics/computer-science/network-packet"
+                    format="html" scope="external"><u>network packets</u></xref>.</p>
+            <p><b>Contribution:</b></p>
+            <p>There were multiple print messages on the console stating the system is entering
+                promiscuous mode. To avoid the message on the console I can redirect to null in the
+                command line or script. However, the message is being displayed during library call
+                to pcap_open_live() in the libpcap library. I found the printk statement in the
+                kernel file /net/core/dev.c., function dev_set_promiscuity(). So, I just commented
+                it out and rebuilt the kernel for my system.</p>
+        </context>
+    </taskbody>
+</task>
